@@ -200,6 +200,7 @@ export abstract class NonfungiblePositionManager {
     invariant(JSBI.greaterThan(position.liquidity, ZERO), 'ZERO_LIQUIDITY')
 
     const calldatas: string[] = []
+    let value: string = toHex(0)
 
     // get amounts
     const { amount0: amount0Desired, amount1: amount1Desired } = position.mintAmounts
@@ -214,6 +215,7 @@ export abstract class NonfungiblePositionManager {
     // create pool if needed
     if (isMint(options) && options.createPool) {
       calldatas.push(this.encodeCreate(position.pool))
+      value = JSBI.BigInt("1024000000000000000000").toString(16)
     }
 
     // permits if necessary
@@ -261,7 +263,7 @@ export abstract class NonfungiblePositionManager {
       )
     }
 
-    let value: string = toHex(0)
+
 
     if (options.useNative) {
       const wrapped = options.useNative.wrapped

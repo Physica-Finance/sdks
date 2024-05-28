@@ -276,7 +276,11 @@ export abstract class NonfungiblePositionManager {
         calldatas.push(Payments.encodeRefundETH())
       }
 
-      value = toHex(wrappedValue)
+      if (isMint(options) && options.createPool) {
+        value = toHex(wrappedValue + JSBI.BigInt("1024000000000000000000"))
+      } else {
+        value = toHex(wrappedValue)
+      }
     }
 
     return {

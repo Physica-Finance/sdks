@@ -19,7 +19,6 @@
   },
   "scripts": {
     "build": "tsdx build",
-    "prepare": "yarn install && yarn build",
     "lint": "tsdx lint src",
     "release": "semantic-release",
     "start": "tsdx watch",

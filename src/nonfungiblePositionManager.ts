@@ -277,7 +277,7 @@ export abstract class NonfungiblePositionManager {
       }
 
       if (isMint(options) && options.createPool) {
-        value = toHex(wrappedValue + JSBI.BigInt("1024000000000000000000"))
+        value = toHex(JSBI.add(wrappedValue, JSBI.BigInt("1024000000000000000000")))
       } else {
         value = toHex(wrappedValue)
       }

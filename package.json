@@ -22,8 +22,7 @@
     "lint": "tsdx lint src",
     "release": "semantic-release",
     "start": "tsdx watch",
-    "test": "tsdx test",
-    "postinstall": "yarn install && tsdx build"
+    "test": "tsdx test"
   },
   "dependencies": {
     "@ethersproject/abi": "^5.5.0",

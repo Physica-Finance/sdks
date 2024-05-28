@@ -1,35 +1,13 @@
-# Uniswap SDK's
+# Alpha software
 
-A repository for many Uniswap SDK's. All SDK's can be found in `sdk/` and have more information in their individual README's.
+The latest version of the SDK is used in production in the Uniswap Interface,
+but it is considered Alpha software and may contain bugs or change significantly between patch versions.
+If you have questions about how to use the SDK, please reach out in the `#dev-chat` channel of the Discord.
+Pull requests welcome!
 
-## Development Commands
+# Uniswap V3 SDK
 
-```markdown
-# Clone
-git clone --recurse-submodules https://github.com/Uniswap/sdks.git
-# Install
-yarn
-# Build
-yarn g:build
-# Typecheck
-yarn g:typecheck
-# Lint
-yarn g:lint
-# Test
-yarn g:test
-# Run a specific package.json command for an individual SDK
-yarn sdk @uniswap/{sdk-name} {command}
-```
+[![npm version](https://img.shields.io/npm/v/@uniswap/v3-sdk/latest.svg)](https://www.npmjs.com/package/@uniswap/v3-sdk/v/latest)
+[![npm bundle size (scoped version)](https://img.shields.io/bundlephobia/minzip/@uniswap/v3-sdk/latest.svg)](https://bundlephobia.com/result?p=@uniswap/v3-sdk@latest)
 
-## Publishing SDK's
-
-Publishing of each SDK is done on merge to main using semantic-release and semantic-release-monorepo. PR titles / commits follow angular conventional commits with custom settings that map as follows:
-
-```markdown
-- `fix(SDK name):` will trigger a patch version
-- `<type>(public):` will trigger a patch version
-- `feat(SDK name):` will trigger a minor version
-- `feat(breaking):` will trigger a major version for a breaking change
-```
-
-Versions will only be generated based on the changelog of the relevant SDK's folder/files.
+In-depth documentation on this SDK is available at [uniswap.org](https://docs.uniswap.org/).
